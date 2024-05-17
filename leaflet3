@@ -1,0 +1,198 @@
+<!-- Bai 3:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buổi 3</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+       <style>
+        #map{
+            height: 100vh;
+            width: 100%;
+
+        }
+        body {
+			margin: 0;
+			padding: 0;
+		}
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script>
+        var map = L.map('map').setView([10.0453859,105.7666436], 18);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    
+        //Câu 1
+        var startPoint = L.latLng(10.0469507,105.767732); // Đại học Kỹ thuật - Công nghệ Cần Thơ
+        var endPoint = L.latLng(10.04552,105.766555); // Công ty Cổ phần Dược Hậu Giang
+        var polyline = L.polyline([startPoint, endPoint], {
+          color: "#052796",
+          weight: 5,
+          dashArray: '10, 10', 
+          dashOffset: '0',
+          opacity: 0.8
+        }).addTo(map);
+
+        // Câu 2
+
+        // var count = 0 ;
+        // map.on('click', function(e)
+        // {  
+        //     latlng = e.latlng;
+        //     count = count + 1;
+        //     if(count == 1)
+        //     {
+        //         L.marker(latlng).addTo(map)
+        //         Start = L.latLng(latlng);
+        //     }
+        //     else if (count ==2)
+        //     {
+        //         count=0;
+        //         L.marker(latlng).addTo(map)
+        //         End = L.latLng(latlng);
+        //         var Line = L.polyline([Start, End],
+        //         {
+        //             color:'#052796',
+        //             weight: 3,               
+        //         }).addTo(map);
+        //     }
+        // })
+
+        //Câu 3
+
+        // var count = 0 ;
+        // map.on('click', function(e)
+        // {  
+        //     latlng = e.latlng;
+        //     count = count + 1;
+        //     if(count == 1)
+        //     {
+        //         L.marker(latlng).addTo(map)
+        //         Start = L.latLng(latlng);
+
+        //     }
+        //     else if (count ==2)
+        //     {
+        //         count=0;
+        //         L.marker(latlng).addTo(map)
+        //         End = L.latLng(latlng);
+        //         var Line = L.polyline([Start, End],
+        //         {
+        //             color:'#052796',
+        //             weight: 3,               
+        //         }).addTo(map);
+        //         let length = map.distance(Start, End);
+        //         var popup = L.popup()
+        //         .setLatLng(latlng)
+        //         .setContent('<p> Khoảng cách: ' + (length.toFixed(0)/1000) + "km" + '</p>')
+        //         .openOn(map);
+        //     }
+        // })
+
+        //Câu 4
+        // var count = 0 ;
+        // map.on('click', function(e)
+        // {  
+        //     latlng = e.latlng;
+        //     count = count + 1;
+        //     if(count == 1)
+        //     {
+        //         L.marker(latlng).addTo(map)
+        //         Start = L.latLng(latlng);
+        //     }
+        //     else if (count ==2)
+        //     {
+        //         L.marker(latlng).addTo(map)
+        //         End = L.latLng(latlng);
+        //         var Line = L.polyline([Start, End],
+        //         {
+        //             color:'#052796',
+        //             weight: 3,               
+        //         }).addTo(map);
+        //     }
+        //     else
+        //     {
+        //         L.marker(latlng).addTo(map)
+        //         Start = End;
+        //         End = L.latLng(latlng);
+        //         var Line = L.polyline([Start, End],
+        //         {
+        //             color:'#052796',
+        //             weight: 3,               
+        //         }).addTo(map);
+        //     }
+        // })
+        // map.on('dblclick', function(event){
+        //     count = 0
+        // });
+
+        //Câu 5
+
+        // var count = 0 ;
+        // map.on('click', function(e)
+        // {  
+        //     latlng = e.latlng;
+        //     count = count + 1;
+        //     if(count == 1)
+        //     {
+        //         L.marker(latlng).addTo(map);
+        //         Start = L.latLng(latlng);
+        //     }
+        //     else if (count ==2)
+        //     {
+        //         count = 0
+        //         console.log(e)
+        //         End = L.latLng(latlng);
+        //         L.marker(latlng).addTo(map);
+        //         L.Routing.control({
+        //             waypoints: [Start, End]
+        //         }).on('routesfound', function (e) {
+        //             var routes = e.routes;
+        //             console.log(routes);
+        //             e.routes[0].coordinates.forEach(function (coord, index) {
+        //                 setTimeout(function () {
+        //                     marker.setLatLng([coord.lat, coord.lng]);
+        //                 }, 100 * index)
+        //             })
+        //         }).addTo(map);
+        //     }
+        // })
+
+        // var count = 0 ;
+        // map.on('click', function(e)
+        // {  
+        //     latlng = e.latlng;
+        //     count = count + 1;
+        //     if(count == 1)
+        //     {
+        //         L.marker(latlng).addTo(map);
+        //         Start = L.latLng(latlng);
+        //     }
+        //     else if (count ==2)
+        //     {
+        //         count = 0
+        //         console.log(e)
+        //         End = L.latLng(latlng);
+        //         L.marker(latlng).addTo(map);
+        //         L.Routing.control({
+        // waypoints: [Start, End]
+        // }).addTo(map);
+        //     }
+        // })
+        
+
+    </script>
+</body>
+</html>  -->
