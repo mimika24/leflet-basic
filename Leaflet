@@ -143,6 +143,20 @@
         //         }
         //     })
 
+         //tinh khoang cach 1 diem toi nhieu diem
+
+//         var vtt= [10.0466602,105.7652407]
+//  L.marker(vtt).addTo(map);
+// map.on('click', function(e){
+//     var latlngu = e.latlng;
+//     var kc = map.distance(vtt,latlngu)
+//     var popup = L.popup()
+//     .setLatLng([9.720020, 105.652743])
+//     .setContent('<p>khoang cach:' + kc.toFixed(0)/1000 +  "km"+'</p>')
+//     .openOn(map);
+//     // alert('KHoang cach: '+ kc)
+//     var polyline = L.polyline([vtt,latlngu], {color: 'red'}).addTo(map)
+//     })
   //Câu 4
   //noi nhieu market
         // var count = 0 ;
